@@ -5,18 +5,18 @@
         <div class="row">
 
             <div class="col-sm-5">
-              <@crafter.h4 $model=model $field="descriptionTitle_t">
-                  ${model.descriptionTitle_t!""}
+              <@crafter.h4 $field="descriptionTitle_t">
+                  ${contentModel.descriptionTitle_t!""}
               </@crafter.h4>
 
-              <@crafter.div $model=model $field="description_html">
-                  ${model.description_html!""}
+              <@crafter.div $field="description_html">
+                  ${contentModel.description_html!""}
               </@crafter.div>
             </div>
 
             <div class="col-sm-3">
-                <@crafter.h4 $model=model $field="quickLinksTitle_t">
-                    ${model.quickLinksTitle_t!""}
+                <@crafter.h4 $field="quickLinksTitle_t">
+                    ${contentModel.quickLinksTitle_t!""}
                 </@crafter.h4>
 
                 <@crafter.renderRepeatGroup
@@ -36,7 +36,7 @@
             <div class="col-sm-4 subscribe">
                 <div class="social">
                     <#if contentModel.socialSitesLinks?? && contentModel.socialSitesLinks.item??>
-                        <#list model.socialSitesLinks.item as item>
+                        <#list contentModel.socialSitesLinks.item as item>
                             <a href="${item.url_s}">
                                 <i class="clickable fa fa-${item.socialSite_s}" ></i>
                             </a>
